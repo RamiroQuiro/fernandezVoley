@@ -7,8 +7,8 @@ export default async function Header() {
   const data = await fetchGoogle();
 
   return (
-    <header className="relative  flex flex-col items-center justify-center w-full h-screen bg-gradient-to-tr from-cyan-900 via-cyan-800 to-orange-700  z-0 text-neutral-600">
-      <div className="bg-white/90 border shadow-lg backdrop-blur-sm p-5 mt-0 rounded">
+    <header className="relative  flex flex-col items-center justify-center w-full h-screen  z-0 text-neutral-600">
+      <div className="bg-white/90 border shadow-lg backdrop-blur-sm p-5 mt-0 rounded -translate-y-20">
         {data?.data.map((data, i) => (
           <h1
             key={i}
@@ -18,7 +18,7 @@ export default async function Header() {
           </h1>
         ))}
       </div>
-      <div className="w-full flex flex-col">
+      <div className="w-full md:w-1/2 flex flex-col">
         <MarcadorenVivo data={data?.data} />
 
         <div className="  w-full   md:gap-4 gap-2 justify-around text-center backdrop-blur-sm  mx-auto items-center flex flex-wrap my-2 relative p-2">

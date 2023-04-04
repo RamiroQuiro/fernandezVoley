@@ -18,8 +18,8 @@ export default async function RootLayout({ children }) {
   // const state= await getData()
 
   return (
-    <html lang="es">
-      <body>
+    <html lang="es" >
+      <body className="bg-gradient-to-tr from-cyan-900 via-cyan-800 to-orange-700 ">
         <ContextContainer>
           <NavBar />
           {children}
