@@ -4,7 +4,7 @@ import logo from "../../../../../public/logoFV.png";
 
 export default function BannerMain() {
   return (
-    <div className="p-6 py-12 bg-orange-400 text-blue-600">
+    <div className="px-8 py-20 bg-orange-400 text-blue-600">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between">
             <Image
