@@ -46,7 +46,11 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-      <pre className="py-6 text-sm text-center dark:text-gray-400">Design   -►   Ramiro Quiroga | Developer Web. All rights reserved.</pre>
+      <div  className="py-6 text-sm text-center my-10 ">
+      <pre>Design   -►   Ramiro Quiroga </pre>
+        <pre> Developer Web. All rights reserved.</pre>
+
+      </div>
     </footer>
   );
 }
