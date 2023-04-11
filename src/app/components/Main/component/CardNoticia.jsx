@@ -15,7 +15,7 @@ export default function CardNoticia({
     return (
       <Link
         href={"http://localhost:3000/News/" + id}
-        className=" w-full gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 bg-gray-100 text-gray-700 p-3"
+        className=" w-full gap-3 mx-auto  group hover:no-underline focus:no-underline  grid grid-cols-1 lg:grid-cols-12 bg-gray-100 text-gray-700 p-3"
       >
         <div className="object-cover w-full h-64 relative rounded sm:h-96 lg:col-span-7 bg-gray-500">
           <Image

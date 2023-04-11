@@ -25,7 +25,7 @@ export default function SectinNews() {
       <h2 className="  md:text-4xl ml-32 md:text-start text-center text-2xl z-10 font-bold leading-none tracking-tight  lg:text-5xl text-transparent bg-clip-text bg-gradient-to-tr  to-gray-100 from-gray-200 ">
         Ultimas Noticias
       </h2>
-      <div className="container w-full p-6 mx-auto space-y-6 sm:space-y-12">
+      <div className=" w-full p-6 mx-auto space-y-6 sm:space-y-12">
         {/* Última noticia */}
         <CardNoticia
           label="titulo"

@@ -14,7 +14,8 @@ export default function FilasGaleria({ arrayImagenes }) {
               key={i}
               className="relative hover:saturate-100 sature-50 rounded  hover:border-orange-500/80 bg-transparent duration-150 hover:border-dotted border-2 border-inherit">
               <Image
-              src={img.image_url}
+              fill
+              src={img.image_url || ""}
               alt={"foto"+i}
               className="object-cover w-full duration-200 cursor-pointer hover:-translate-x-2 hover:-translate-y-2 hover:shadow-lg shadow-md rounded hover: dark:bg-gray-500 aspect-square"
             />{" "}
