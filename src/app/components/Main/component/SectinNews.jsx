@@ -28,6 +28,7 @@ export default function SectinNews() {
         {/* Última noticia */}
         <CardNoticia
           label="titulo"
+          id={data[0]?.id}
           title={data[0]?.titulo}
           date={data[0]?.fecha}
           image={data[0]?.imagen}

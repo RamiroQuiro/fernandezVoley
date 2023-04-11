@@ -10,18 +10,18 @@ export default function News({params}) {
  
   const news=data?.data?.filter(e=>e.id==id)
 
-  console.log(isLoading)
-!isLoading && !news?
-<Skeletor/>:
+if(isLoading && !news)return(
 
-   <CardNoticia  
-   label='news'
-   id={id} 
-  title={news[0].titulo}
-  date={news[0].fecha}
-  image={news[0].imagen}
-  >
-    {news[0].children}
-  </CardNoticia>;
-
+  <Skeletor/>
+)
+return(  <CardNoticia  
+  label='news'
+  id={id} 
+ title={news[0].titulo}
+ date={news[0].fecha}
+ image={news[0].imagen}
+ >
+   {news[0].noticia}
+ </CardNoticia>
+)
 }
