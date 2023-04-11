@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function FilasGaleria({ arrayImagenes }) {
@@ -11,10 +12,10 @@ export default function FilasGaleria({ arrayImagenes }) {
             arrayImagenes?.slice(0,2).map((img,i)=>(
               <div 
               key={i}
-              className=" hover:saturate-100 sature-50 rounded  hover:border-orange-500/80 bg-transparent duration-150 hover:border-dotted border-2 border-inherit">
-              <img
+              className="relative hover:saturate-100 sature-50 rounded  hover:border-orange-500/80 bg-transparent duration-150 hover:border-dotted border-2 border-inherit">
+              <Image
               src={img.image_url}
-              alt=""
+              alt={"foto"+i}
               className="object-cover w-full duration-200 cursor-pointer hover:-translate-x-2 hover:-translate-y-2 hover:shadow-lg shadow-md rounded hover: dark:bg-gray-500 aspect-square"
             />{" "}
             </div>
@@ -24,9 +25,10 @@ export default function FilasGaleria({ arrayImagenes }) {
        
       </div>
       <div className="h-1/2  w-full mx-auto">
-        <div className=" hover:saturate-100 sature-50 rounded  hover:border-red-500/80 bg-transparent duration-150 hover:border-dotted border-2 border-inherit">
-          <img
-            alt=""
+        <div className=" relative hover:saturate-100 sature-50 rounded  hover:border-red-500/80 bg-transparent duration-150 hover:border-dotted border-2 border-inherit">
+          <Image
+          fill
+            alt={"foto"}
             className="w-full h-64 object-cover rounded mx-auto duration-200 cursor-pointer hover:-translate-x-2 hover:-translate-y-2 hover:shadow-lg hover:saturate-100 sature-50  shadow-md "
             src={arrayImagenes? arrayImagenes[2]?.image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Pr%C3%A4torianer.jpg/250px-Pr%C3%A4torianer.jpg"}
           />

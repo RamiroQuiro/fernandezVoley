@@ -12,8 +12,8 @@ const [images, setImages] = useState(false)
   return (
     <div className="container  my-14 flex md:flex-row flex-col items-center group  justify-center gap-6 mx-auto">
     
-    <FilasGaleria arrayImagenes={data?.data?.slice(1,3)}/>
-    <FilasGaleria arrayImagenes={data?.data?.slice(3,7)}/>
+    <FilasGaleria arrayImagenes={data?.data?.reverse().slice(0,3)}/>
+    <FilasGaleria arrayImagenes={data?.data?.reverse().slice(3,7)}/>
     </div>
   );
 }
