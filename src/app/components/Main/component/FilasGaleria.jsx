@@ -2,6 +2,10 @@ import Image from "next/image";
 import React from "react";
 
 export default function FilasGaleria({ arrayImagenes }) {
+
+  const myLoader = ({ src, width, quality }) => {
+    return `https://drive.google.com/uc?export=view&id=${src}`;
+  };
   return (
     <div
       className={` md:w-1/2 w-10/12 flex flex-col items-center justify-center mx-auto peer gap-5 peer-first:flex-col-reverse`}
@@ -16,7 +20,8 @@ export default function FilasGaleria({ arrayImagenes }) {
               <Image
               width={500}
               height={500}
-              src={img.image_url}
+              loader={myLoader}
+              src={img.src}
               alt={"foto"+i}
               className="object-contain w-full duration-200 cursor-pointer hover:-translate-x-2 hover:-translate-y-2 hover:shadow-lg shadow-md rounded hover: dark:bg-gray-500 aspect-square"
             />{" "}
