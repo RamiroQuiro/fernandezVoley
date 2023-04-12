@@ -3,6 +3,7 @@ import { ContextContainer } from "./context-container";
 import favicon from "../../public/Fv01.png";
 import Head from "next/head"
 import "./globals.css";
+import Footer from "./components/Footer/Footer";
 
 export const metadata = {
   title: "Fernandez Voley",
@@ -28,6 +29,7 @@ export default async function RootLayout({ children }) {
         <ContextContainer>
           <NavBar />
           {children}
+          <Footer/>
         </ContextContainer>
       </body>
     </html>
