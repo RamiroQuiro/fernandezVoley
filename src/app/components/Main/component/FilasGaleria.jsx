@@ -7,6 +7,9 @@ export default function FilasGaleria({ arrayImagenes }) {
   const myLoader = ({ src, width, quality }) => {
     return `https://drive.google.com/uc?export=view&id=${src}`;
   };
+
+
+  console.log(arrayImagenes)
   return (
     <div
       className={` md:w-1/2 w-10/12 flex flex-col items-center justify-center mx-auto peer gap-5 peer-first:flex-col-reverse`}
@@ -42,7 +45,7 @@ export default function FilasGaleria({ arrayImagenes }) {
           height={500}
             alt={"foto"}
             className="w-full h-64 object-cover rounded mx-auto duration-200 cursor-pointer hover:-translate-x-2 hover:-translate-y-2 hover:shadow-lg hover:saturate-100 sature-50  shadow-md "
-            src={arrayImagenes? arrayImagenes[2]?.image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Pr%C3%A4torianer.jpg/250px-Pr%C3%A4torianer.jpg"}
+            // src={arrayImagenes[2]?.src || "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Pr%C3%A4torianer.jpg/250px-Pr%C3%A4torianer.jpg"}
           />
         </Link>
       </div>

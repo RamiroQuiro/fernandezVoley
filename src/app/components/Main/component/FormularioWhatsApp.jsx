@@ -29,7 +29,7 @@ const mandar=()=>{
 
     <div className="flex flex-col mt-2">
         <label htmlFor="tel" className="hidden"></label>
-        <textarea name="mensaje" id="tel" onChange={handleChange} placeholder="Escribe aqui tu Mensaje" rows={10} className="w-100 mt-2  py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"/>
+        <textarea name="mensaje" id="tel" required onChange={handleChange} placeholder="Escribe aqui tu Mensaje" rows={10} className="w-100 mt-2  py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"/>
     </div>
 
     <button type="button" onClick={()=>mandar()} className="md:w-32 bg-green-600  hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg mt-3  transition ease-in-out duration-300">

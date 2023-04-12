@@ -16,7 +16,7 @@ export default function GaleriaFoto() {
     {data?.data?.reverse().map((img, i) => (
       <div
         key={i}
-        className="relative w-[30%] flex-auto hover:saturate-100 sature-50 rounded  hover:border-orange-500/80 bg-transparent duration-150 hover:border-dotted border-2 border-inherit"
+        className="relative md:w-[30%] flex-auto hover:saturate-100 sature-50 rounded  hover:border-orange-500/80 bg-transparent duration-150 hover:border-dotted border-2 border-inherit"
       >
         <Image
           width={500}
