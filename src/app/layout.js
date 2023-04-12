@@ -24,7 +24,7 @@ export default async function RootLayout({ children }) {
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
 	</Head>
-      <body className="bg-gradient-to-tr from-cyan-900 via-cyan-800 to-orange-700 ">
+      <body className="bg-gradient-to-tr from-cyan-900 via-cyan-800 to-orange-700 overflow-x-hidden ">
         <ContextContainer>
           <NavBar />
           {children}

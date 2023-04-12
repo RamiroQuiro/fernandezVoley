@@ -9,16 +9,13 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
-        abrirCat: {
-          "0%": { transform: "rotate(0.0deg)" },
-          "10%": { transform: "rotate(14deg)" },
-          "20%": { transform: "rotate(-8deg)" },
-          "30%": { transform: "rotate(14deg)" },
-          "40%": { transform: "rotate(-4deg)" },
-          "50%": { transform: "rotate(10.0deg)" },
-          "60%": { transform: "rotate(0.0deg)" },
-          "100%": { transform: "rotate(0.0deg)" },
-        },
+       gilth:{
+          '0%':{textShadow:'#c1c1c1 0px 0px, #e1e1e2 0px 0px',},
+          '49%':{textShadow:'#c1c1c1 0px 0px, #e1e1e2 0px 0px',},
+          '50%':{textShadow:'#fffccc -2px 0px, #ff2020 2px 0px',},
+          '55%':{textShadow:'#c1c1c1 0px 0px, #e1e1e2 0px 0px',},
+          '0%':{textShadow:'#c1c1c1 0px 0px, #e1e1e2 0px 0px',},
+       },
         sliceDown: {
           "0%": { maxHeight: "300px",opacity:"1" },
           "100%": { maxHeight: "0px",opacity:"0" },
@@ -57,7 +54,7 @@ module.exports = {
         },
       },
       animation: {
-        "waving-hand": "abrirCat 2s linear infinite",
+        glitch:"gilth .5s linear infinite ",
         aparecer: "aparecer 1s ease-out ",
         aparecerCostado: "aparecerCote .3s ease-in ",
         desaparecerCostado: "desaparecerCote .3s ease-in ",
