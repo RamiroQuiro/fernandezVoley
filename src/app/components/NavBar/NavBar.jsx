@@ -103,7 +103,7 @@ export default function NavBar() {
           !toggle
             ? "translate-x-full opacity-0 md:translate-x-0 md:opacity-100"
             : "translate-x-0 opacity-100"
-        } duration-300 top-0 left-0  bg-neutral-800/80 backdrop-blur-sm border-b border-blue-500/70 z-40 md:mb-24 flex flex-col md:flex-row  md:h items-center fixed justify-evenly w-full py-3`}
+        } duration-300 top-0 left-0  bg-neutral-800/80 backdrop-blur-sm border-b border-blue-500/70 z-40 md:mb-24 flex flex-col md:flex-row h-full md:h-auto items-center fixed justify-evenly w-full py-3`}
       >
         <ul className="flex flex-col md:flex-row h-1/3 md:h-auto items-center md:justify-evenly justify-between gap-3 w-full px-10">
           {arrayItems.map((item) => (
