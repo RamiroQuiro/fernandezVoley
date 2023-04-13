@@ -40,7 +40,7 @@ export default function CardNoticia({
     return (
       <Link
         href={"https://fernandezvoley.vercel.app/News/" + id}
-        className="md:max-w-xs min-w-[30%] w-10/12  mx-auto group hover:no-underline focus:no-underline animate-[aparecerDeArriba_1s] bg-gray-100 text-gray-700"
+        className="md:max-w-xs min-w-[30%] w-full  mx-auto group hover:no-underline focus:no-underline animate-[aparecerDeArriba_1s] bg-gray-100 text-gray-700"
       >
         <div className=" w-full rounded h-52 relative bg-gray-500">
           <Image

@@ -21,11 +21,11 @@ export default async function RootLayout({ children }) {
   // const state= await getData()
 
   return (
-    <html lang="es">
+    <html lang="es" className='scroll-smooth' >
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
 	</Head>
-      <body className="bg-gradient-to-tr from-cyan-900 via-cyan-800 to-orange-700 overflow-x-hidden selection:bg-orange-500/20">
+      <body className="scroll-smooth bg-gradient-to-tr from-cyan-900 via-cyan-800 to-orange-700 overflow-x-hidden selection:bg-orange-500/20">
         <ContextContainer>
           <NavBar />
           {children}

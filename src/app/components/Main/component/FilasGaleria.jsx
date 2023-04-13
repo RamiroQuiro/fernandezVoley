@@ -13,7 +13,7 @@ export default function FilasGaleria({ arrayImagenes }) {
     <div
       className={` md:w-1/2 w-10/12 flex flex-col items-center justify-center mx-auto peer gap-5 peer-first:flex-col-reverse`}
     >
-      <div className="  w-full flex h-1/2 gap-5  items-center justify-between mx-auto ">
+      <div className="  w-full flex h-1/2 md:gap-5 gap-2  items-center justify-between mx-auto ">
         
           {
             arrayImagenes?.slice(0,2).map((img,i)=>(

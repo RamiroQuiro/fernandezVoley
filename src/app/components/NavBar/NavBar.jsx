@@ -6,12 +6,17 @@ export default function NavBar() {
   const [toggle, setToggle] = useState(false);
 
   const Items = ({ text, href }) => (
-    <Link
+    <a
+ onClick={()=>{
+  setTimeout(()=>{
+    setToggle(false)
+  },500)
+  }}
       href={href}
-      className=" uppercase font-medium md:text-sm text-base py-2 text-center border-b border-gray-100/20 hover:border-orange-400 w-full  cursor-pointer   text-gray-100 hover:text-gray-50 hover:scale-105 md:hover:scale-110 duration-150"
+      className=" uppercase font-medium md:text-sm text-base py-2 md:py-0 text-center border-b border-gray-100/20 hover:border-orange-400 w-full md:border-0 hover:text-orange-400 cursor-pointer   text-gray-100  hover:scale-105 md:hover:scale-110 duration-150"
     >
       {text}
-    </Link>
+    </a>
   );
 
   const arrayItems = [
@@ -21,21 +26,28 @@ export default function NavBar() {
       text: "HOME",
     },
     {
-      href: "/servicios",
+      href: "/#noticias",
       id: 1,
-      text: "servicios",
+      text: "noticias",
     },
     {
-      href: "/nosotros",
+      href: "#s",
       id: 1,
-      text: "nosotros",
+      text: "actividades",
     },
     {
-      href: "/contacto",
+      href: "/#multimedia",
+      id: 1,
+      text: "Galeria",
+    },
+    {
+      href: "/#contacto",
       id: 1,
       text: "contacto",
     },
   ];
+
+
 
   return (
     <>
@@ -89,9 +101,9 @@ export default function NavBar() {
       <nav
         className={`${
           !toggle
-            ? "translate-x-full opacity-0"
-            : "flex translate-x-0 opacity-100"
-        } duration-300   bg-neutral-800/80 backdrop-blur-sm border-b-2 border-blue-500/70 z-40 md:mb-24 flex flex-col md:flex-row h-full md:h items-center fixed justify-evenly w-full py-3`}
+            ? "translate-x-full opacity-0 md:translate-x-0 md:opacity-100"
+            : "translate-x-0 opacity-100"
+        } duration-300 top-0 left-0  bg-neutral-800/80 backdrop-blur-sm border-b border-blue-500/70 z-40 md:mb-24 flex flex-col md:flex-row  md:h items-center fixed justify-evenly w-full py-3`}
       >
         <ul className="flex flex-col md:flex-row h-1/3 md:h-auto items-center md:justify-evenly justify-between gap-3 w-full px-10">
           {arrayItems.map((item) => (
