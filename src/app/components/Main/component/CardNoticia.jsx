@@ -39,7 +39,7 @@ export default function CardNoticia({
   if (label == "grid")
     return (
       <Link
-        href={"http://localhost:3000/News/" + id}
+        href={"https://fernandezvoley.vercel.app/News/" + id}
         className="md:max-w-xs min-w-[30%] w-10/12  mx-auto group hover:no-underline focus:no-underline animate-[aparecerDeArriba_1s] bg-gray-100 text-gray-700"
       >
         <div className=" w-full rounded h-52 relative bg-gray-500">
