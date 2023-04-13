@@ -16,7 +16,8 @@ export default function GaleriaFoto() {
     <div className="container h-full  flex md:flex-row flex-col items-center group flex-wrap justify-center gap-6 mx-auto bg-gray-50/50 backdrop-blur-sm px-5 py-10 rounded">
     {data?.data?.reverse().map((img, i) => (
       <Link
-      href={img.image_url}
+      target='_blank'
+      href={`https://drive.google.com/uc?export=view&id=${img.src}`}
         key={i}
         className="relative md:w-[30%] bg-gray-50 w-full flex-auto hover:saturate-100 sature-50 rounded p-2 hover:border-orange-500/80 bg-transparent duration-150 hover:border-dotted "
       >
