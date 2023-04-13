@@ -9,7 +9,6 @@ export default function FilasGaleria({ arrayImagenes }) {
   };
 
 
-  console.log(arrayImagenes)
   return (
     <div
       className={` md:w-1/2 w-10/12 flex flex-col items-center justify-center mx-auto peer gap-5 peer-first:flex-col-reverse`}
@@ -21,14 +20,14 @@ export default function FilasGaleria({ arrayImagenes }) {
               <Link
               href='/galeria'
               key={i}
-              className="relative w-1/2 hover:saturate-100 sature-50 rounded  hover:border-orange-500/80 bg-transparent duration-150 hover:border-dotted border-2 border-inherit">
+              className="relative w-1/2 hover:saturate-100 sature-50 rounded bg-gray-50 hover:border-orange-500/80 bg-transparent duration-150 hover:border-dotted border-2 border-inherit">
               <Image
               width={500}
               height={500}
               loader={myLoader}
               src={img.src}
               alt={"foto"+i}
-              className="object-contain w-full duration-200 cursor-pointer hover:-translate-x-2 hover:-translate-y-2 hover:shadow-lg shadow-md rounded hover: dark:bg-gray-500 aspect-square"
+              className="object-contain w-full duration-200 cursor-pointer  bg-gray-50 hover:-translate-x-2 hover:-translate-y-2 hover:shadow-lg shadow-md rounded hover: dark:bg-gray-500 aspect-square"
             />{" "}
             </Link>
             ))
@@ -42,10 +41,11 @@ export default function FilasGaleria({ arrayImagenes }) {
         className=" relative hover:saturate-100 sature-50 rounded  hover:border-red-500/80 bg-transparent duration-150 hover:border-dotted border-2 border-inherit">
           <Image
           width={500}
+          loader={myLoader}
           height={500}
             alt={"foto"}
-            className="w-full h-64 object-cover rounded mx-auto duration-200 cursor-pointer hover:-translate-x-2 hover:-translate-y-2 hover:shadow-lg hover:saturate-100 sature-50  shadow-md "
-            // src={arrayImagenes[2]?.src || "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Pr%C3%A4torianer.jpg/250px-Pr%C3%A4torianer.jpg"}
+            className="w-full h-64 object-cover rounded mx-auto  bg-gray-50 duration-200 cursor-pointer hover:-translate-x-2 hover:-translate-y-2 hover:shadow-lg hover:saturate-100 sature-50  shadow-md "
+            src={arrayImagenes? arrayImagenes[2]?.src : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Pr%C3%A4torianer.jpg/250px-Pr%C3%A4torianer.jpg"}
           />
         </Link>
       </div>
