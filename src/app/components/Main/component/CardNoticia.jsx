@@ -64,7 +64,7 @@ export default function CardNoticia({
   if (label == "news")
     return (
       <section className="text-gray-600 min-h-screen flex py-16 flex-col bg-gray-50 w-full items-center justify-center">
-      <ButtonVolver/>
+      
         <div className="lg:w-4/5  px-5 py-24 mx-auto flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 w-full relative">
             <Image
@@ -90,6 +90,7 @@ export default function CardNoticia({
             </div>
           </div>
         </div>
+        <ButtonVolver/>
       </section>
     );
 
