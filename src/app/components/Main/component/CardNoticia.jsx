@@ -1,8 +1,7 @@
-import React from "react";
-import Skeletor from "../../Skeletor";
+
 import Link from "next/link";
 import Image from "next/image";
-
+import ButtonVolver from "./buttonVolver";
 export default function CardNoticia({
   label,
   children,
@@ -11,6 +10,8 @@ export default function CardNoticia({
   image,
   id,
 }) {
+
+
   if (label == "titulo")
     return (
       <Link
@@ -62,8 +63,9 @@ export default function CardNoticia({
     );
   if (label == "news")
     return (
-      <section className="text-gray-600 min-h-screen flex  bg-gray-50 w-full items-center justify-center">
-        <div className="lg:w-4/5  px-5 py-24 mx-auto flex flex-col md:flex-row items-stretch justify-between">
+      <section className="text-gray-600 min-h-screen flex py-16 flex-col bg-gray-50 w-full items-center justify-center">
+      <ButtonVolver/>
+        <div className="lg:w-4/5  px-5 py-24 mx-auto flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 w-full relative">
             <Image
               src={image}

@@ -23,6 +23,8 @@ export default function FilasGaleria({ arrayImagenes }) {
               className="relative w-1/2 hover:saturate-100 sature-50 rounded bg-gray-50 hover:border-orange-500/80 bg-transparent duration-150 hover:border-dotted border-2 border-inherit">
               <Image
               width={500}
+              quality={75}
+              priority
               height={500}
               loader={myLoader}
               src={img.src}
