@@ -13,14 +13,14 @@ export default function FilasGaleria({ arrayImagenes }) {
     <div
       className={` md:w-1/2 w-10/12 flex flex-col items-center justify-center mx-auto peer gap-5 peer-first:flex-col-reverse`}
     >
-      <div className="  w-full flex h-1/2 md:gap-5 gap-2  items-center justify-between mx-auto ">
+      <div className="  w-full flex md:h-1/2 md:gap-5  h-full items-center justify-between mx-auto ">
         
           {
             arrayImagenes?.slice(0,2).map((img,i)=>(
               <Link
               href='/galeria'
               key={i}
-              className="relative w-1/2 hover:saturate-100 sature-50 rounded bg-gray-50 hover:border-orange-500/80 bg-transparent duration-150 hover:border-dotted border-2 border-inherit">
+              className="relative md:w-1/2 w-full h-full hover:saturate-100 sature-50 rounded bg-gray-50 hover:border-orange-500/80 bg-transparent duration-150 hover:border-dotted border-2 border-inherit">
               <Image
               width={500}
               quality={75}
@@ -40,7 +40,7 @@ export default function FilasGaleria({ arrayImagenes }) {
       <div className="h-1/2  w-full mx-auto">
         <Link 
         href='/galeria'
-        className=" relative hover:saturate-100 sature-50 rounded  hover:border-red-500/80 bg-transparent duration-150 hover:border-dotted border-2 border-inherit">
+        className=" relative hover:saturate-100 sature-50 rounded  duration-150 ">
           <Image
           width={500}
           loader={myLoader}

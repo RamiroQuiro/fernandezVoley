@@ -42,7 +42,7 @@ export default function BannerMain() {
 
   return (
     <div className="md:px-8 py-10 bg-orange-300 text-blue-600">
-      <div className="relative w-full flex flex-wrap mx-auto items-center justify-between gap-4 py-2">
+      <div className="relative w-full flex flex-wrap mx-auto items-center justify-around md:gap-4 gap-2  p-2">
         {arraySponsor.map((sponsor) => (
           <Image
             height={100}
@@ -50,7 +50,7 @@ export default function BannerMain() {
             quality={75}
             priority
             key={sponsor.id}
-            className="h-48 aspect-video  object-coveer object-center bg-gray-100 w-[30%] rounded-md p-1"
+            className="md:h-48 h-24 aspect-video  object-coveer object-center bg-gray-50 md:w-[25%] w-[45%] rounded-md p-2"
             src={sponsor.src}
             alt={sponsor.alt}
           />
