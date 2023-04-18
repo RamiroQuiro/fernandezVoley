@@ -26,8 +26,8 @@ export default function FilasGaleria({ arrayImagenes }) {
               quality={75}
               priority
               height={500}
-              loader={myLoader}
-              src={img.src}
+              // loader={myLoader}
+              src={img.url}
               alt={"foto"+i}
               className="object-contain w-full duration-200 cursor-pointer  bg-gray-50 hover:-translate-x-2 hover:-translate-y-2 hover:shadow-lg shadow-md rounded hover: dark:bg-gray-500 aspect-square"
             />{" "}
@@ -47,7 +47,7 @@ export default function FilasGaleria({ arrayImagenes }) {
           height={500}
             alt={"foto"}
             className="w-full h-64 object-cover rounded mx-auto  bg-gray-50 duration-200 cursor-pointer hover:-translate-x-2 hover:-translate-y-2 hover:shadow-lg hover:saturate-100 sature-50  shadow-md "
-            src={arrayImagenes? arrayImagenes[2]?.src : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Pr%C3%A4torianer.jpg/250px-Pr%C3%A4torianer.jpg"}
+            src={arrayImagenes? arrayImagenes[2]?.url : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Pr%C3%A4torianer.jpg/250px-Pr%C3%A4torianer.jpg"}
           />
         </Link>
       </div>
