@@ -13,7 +13,7 @@ export default function GaleriaFoto() {
 
   if (error) return <div>Carga de galerias fallida</div>;
   return (
-    <div className="container h-full  flex  items-center  flex-wrap justify-center md:gap-6 mx-auto bg-gray-50/50 backdrop-blur-sm md:px-5 px-2 py-10 rounded">
+    <div className="container h-full  flex  items-center  flex-wrap justify-center md:gap-6 mx-auto bg-gray-50/50 backdrop-blur-sm md:px-5 px-2 py-10 gap-2 rounded">
       {data?.imagenes?.reverse().map((img, i) => (
         <Link
           target="_blank"
