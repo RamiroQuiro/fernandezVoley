@@ -8,6 +8,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        online: "0 0 15px #FD850280 ",
+        online2: "0 0 10px #3369BD95 ",
+      },
+      borderRadius: {
+        online: "30% 70% 70% 30% / 30% 30% 70% 70%",
+        online2: "64% 36% 45% 55% / 69% 68% 32% 31%",
+        online3: "48% 52% 54% 46% / 44% 54% 46% 56%",
+      },
+
       keyframes: {
         glitch2: {
           " 0%": {
@@ -102,7 +112,7 @@ module.exports = {
           "50%": {
             textShadow: "#fffccc -2px 0px, #ff2020 2px 0px",
             transform: "translateX(-5px)",
-              transform: " skew(0.32deg)",
+            transform: " skew(0.32deg)",
           },
           "52%": {
             textShadow: "#c1c1c1 0px 0px, #e1e1e2 0px 0px",
@@ -112,22 +122,19 @@ module.exports = {
           "52%": { textShadow: "#c1c1c1 0px 0px, #1871B7 0px 0px" },
           "0%": { textShadow: "#F38632 0px 0px, #1871B7 0px 0px" },
         },
-        sliceDown: {
-          "0%": { maxHeight: "300px", opacity: "1" },
-          "100%": { maxHeight: "0px", opacity: "0" },
-        },
-        sliceUp: {
-          "0%": { maxHeight: "0px", opacity: "0" },
-          "100%": { maxHeight: "300px", opacity: "1" },
-        },
+rotacion:{
+  "0%": {
+    transform: "rotate(0deg)",
+  },
+  "100%": {
+    transform: "rotate(360deg)",
+  },
+},
         aparecer: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
-        hoverFilter: {
-          "0%": { Height: "50px" },
-          "100%": { Height: "auto" },
-        },
+
         aparecerDeAbajo: {
           "0%": { opacity: "0", transform: "translateY(50%)" },
           "100%": { opacity: "1", transform: "translateY(0%) " },
@@ -141,14 +148,10 @@ module.exports = {
           "100%": { opacity: "0" },
         },
         aparecerCote: {
-          "0%": { transform: "translateX(100%)", opacity: "0", },
-          "98%": { transform: "translateX(-1%)", opacity: "0.5", },
-          "99%": { transform: "translateX(1%)", opacity: "1", },
-          "100%": { transform: "translateX(0%)", opacity: "1", },
-        },
-        desaparecerCote: {
-          "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(150%)" },
+          "0%": { transform: "translateX(100%)", opacity: "0" },
+          "98%": { transform: "translateX(-1%)", opacity: "0.5" },
+          "99%": { transform: "translateX(1%)", opacity: "1" },
+          "100%": { transform: "translateX(0%)", opacity: "1" },
         },
       },
       animation: {

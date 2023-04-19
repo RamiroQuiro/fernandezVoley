@@ -2,6 +2,7 @@
 import { useState } from "react";
 import ButtonAgregar from "../buttonAgregar";
 import ContenedorForm from "./ContenedorForm";
+import ContenedorLogin from "./ContenedorLogin";
 
 export default function ModalGaleria() {
   const [active, setActive] = useState(false);
@@ -13,7 +14,8 @@ export default function ModalGaleria() {
     <>
     {
         active&&
-        <ContenedorForm handleClick={handleClick} setActive={setActive}/>
+        <ContenedorLogin handleClick={handleClick}/>
+        // <ContenedorForm handleClick={handleClick} setActive={setActive}/>
     }
     
         <ButtonAgregar handleClick={handleClick} />
