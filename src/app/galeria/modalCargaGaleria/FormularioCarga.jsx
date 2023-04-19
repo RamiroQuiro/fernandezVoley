@@ -85,7 +85,7 @@ export default function FormularioCarga({ setActive }) {
           className="px-3 shadow-lg py-2 rounded w-full"
         />
       </label>
-      <div className="w-8/12 flex items-center justify-around">
+      <div className="w-8/12 flex flex-col items-center justify-around">
       <button
         className="bg-orange-500 rounded shadow-lg py-2 px-5 font-medium text-gray-100 hover:bg-orange-600 duration-200"
         onClick={handleSubir}
@@ -93,10 +93,10 @@ export default function FormularioCarga({ setActive }) {
         Subir
       </button>
       <button
-        className="bg-orange-500 rounded shadow-lg py-2 px-5 font-medium text-gray-100 hover:bg-orange-600 duration-200"
+        className=" rounded my-3 font-medium text-sm text-gray-700 "
         onClick={()=>signOut(auth)}
       >
-        salir de sesion
+        Salir de sesion
       </button>
       </div>
     </form>
