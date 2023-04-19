@@ -4,7 +4,7 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
  const docRef=doc(db,'FVoley/LfRR14tVEccsxIL6jIDU')
 
-const cargarImagenes=async (img,descripcion)=>{
+const cargarImagenes=async (img,descripcion,isFunction)=>{
 
  const fileRef=ref(storage,`Fotos/${descripcion}`)   
  await uploadBytes(fileRef,img).then(async()=>{
@@ -12,6 +12,7 @@ const cargarImagenes=async (img,descripcion)=>{
         await updateDoc(docRef,{
             imagenes:arrayUnion({url:url,descripcion:descripcion})
         })
+        isFunction(false)
     })
  })
 

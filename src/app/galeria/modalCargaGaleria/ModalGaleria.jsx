@@ -14,7 +14,7 @@ export default function ModalGaleria() {
     <>
     {
         active&&
-        <ContenedorLogin handleClick={handleClick}/>
+        <ContenedorLogin handleClick={handleClick} setActive={setActive}/>
         // <ContenedorForm handleClick={handleClick} setActive={setActive}/>
     }
     
