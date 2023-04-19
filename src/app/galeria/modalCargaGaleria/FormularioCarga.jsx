@@ -7,6 +7,8 @@ import {
   leerGaleria,
 } from "../../api/services/useFirebase/cargarImagnes";
 import { toast } from "react-hot-toast";
+import { signOut } from "firebase/auth";
+import { auth } from "@/app/api/firebase";
 
 export default function FormularioCarga({ setActive }) {
   const [imagen, setImagen] = useState(false);
@@ -83,12 +85,20 @@ export default function FormularioCarga({ setActive }) {
           className="px-3 shadow-lg py-2 rounded w-full"
         />
       </label>
+      <div className="w-8/12 flex items-center justify-around">
       <button
         className="bg-orange-500 rounded shadow-lg py-2 px-5 font-medium text-gray-100 hover:bg-orange-600 duration-200"
         onClick={handleSubir}
       >
         Subir
       </button>
+      <button
+        className="bg-orange-500 rounded shadow-lg py-2 px-5 font-medium text-gray-100 hover:bg-orange-600 duration-200"
+        onClick={()=>signOut(auth)}
+      >
+        salir de sesion
+      </button>
+      </div>
     </form>
   );
 }

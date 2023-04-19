@@ -9,7 +9,7 @@ export default function ContenedorLogin({ handleClick, setActive }) {
         className={"absolute top-5 right-5"}
         handleClick={handleClick}
       />
-      <FormularioLogin />
+      <FormularioLogin handleClick={handleClick} setActive={setActive} />
     </div>
   );
 }
