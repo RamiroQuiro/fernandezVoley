@@ -43,7 +43,6 @@ export default function FilasGaleria({ arrayImagenes }) {
         className=" relative hover:saturate-100 sature-50 rounded  duration-150 ">
           <Image
           width={500}
-          loader={myLoader}
           height={500}
             alt={"foto"}
             className="w-full h-64 object-cover rounded mx-auto  bg-gray-50 duration-200 cursor-pointer hover:-translate-x-2 hover:-translate-y-2 hover:shadow-lg hover:saturate-100 sature-50  shadow-md "
