@@ -28,12 +28,13 @@ export default function GaleriaFoto() {
             alt={"foto"}
             className="object-contain bg-gray-50 w-full duration-200  shadow-md rounded hover:  aspect-square"
           />{" "}
-           <div className="hidden animate-[aparecer_.2s] group-hover:flex mx-auto text-center items-center justify-center absolute w-full h-1/2 top-1/2 left-0 bg-gradient-to-b from-neutral-800/60 via-neutral-700/40 to-transparent ">
-        <span className="w-10/12 font-medium text-lg text-gray-50 text-center mx-auto ">{img.descripcion}</span>
-      </div>
+          <div className="md:hidden flex animate-[aparecer_.2s] group-hover:flex mx-auto text-center items-center justify-center absolute w-full md:h-1/2 h-1/3 md:top-1/2 top-2/3 left-0 bg-gradient-to-b from-neutral-800/70 via-neutral-700/50 to-neutral-700/30 ">
+            <span className="w-10/12  text-lg text-gray-50 text-center mx-auto ">
+              {img.descripcion}
+            </span>
+          </div>
         </Link>
       ))}
-     
     </div>
   );
 }

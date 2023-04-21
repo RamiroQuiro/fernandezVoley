@@ -19,10 +19,10 @@ export default function FormularioLogin({ handleClick, setActive }) {
     e.preventDefault();
     loginUser(userData.email, userData.password, setGaleraActiva);
   };
-  const handleSignInGoogle = (e) => {
+  const handleSignInGoogle = async(e) => {
     e.preventDefault();
-    sigInGoogle().then(() => {
-      setGaleraActiva(true);
+    await sigInGoogle().then((result) => {
+      console.log(result)
     });
   };
 
