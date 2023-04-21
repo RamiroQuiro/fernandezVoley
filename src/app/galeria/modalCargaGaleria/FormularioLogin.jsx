@@ -22,8 +22,7 @@ export default function FormularioLogin({ handleClick, setActive }) {
   const handleSignInGoogle = async(e) => {
     e.preventDefault();
     await sigInGoogle().then((result) => {
-      console.log(result)
-    });
+setActive(true)    });
   };
 
     return (

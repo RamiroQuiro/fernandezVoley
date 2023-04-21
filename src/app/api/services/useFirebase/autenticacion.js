@@ -3,6 +3,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signInWithRedirect,
 } from "firebase/auth";
 import { auth } from "../../firebase";
 import { toast } from "react-hot-toast";
@@ -36,21 +37,21 @@ const loginUser = async (email, password, isAction) => {
     });
 };
 const provider = new GoogleAuthProvider();
-console.log(provider)
-console.log(auth)
 
 const sigInGoogle = async () => {
-    const credential = await signInWithPopup(auth,provider).then((result)=>{
-return result
-    }).catch((error)=> {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The AuthCredential type that was used.
-    const sigin = GoogleAuthProvider.credentialFromError(error);
-    console.log(credential);
-    // ...
-  })
+  const credential = await signInWithRedirect(auth, provider)
+    .then((result) => {
+      return result;
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The AuthCredential type that was used.
+      const sigin = GoogleAuthProvider.credentialFromError(error);
+      console.log(credential);
+      // ...
+    });
 };
 
 export { loginUser, userAutenticado, sigInGoogle };
