@@ -8,15 +8,15 @@ export default function NavBar() {
   const [toggle, setToggle] = useState(false);
   const [scrollTop, setScrollTop] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll, { passive: true });
+  // }, []);
 
-  const handleScroll = () => {
-    setScrollTop(0);
-    const position = window.pageYOffset;
-    if (position > 350) setScrollTop(position);
-  };
+  // const handleScroll = () => {
+  //   setScrollTop(0);
+  //   const position = window.pageYOffset;
+  //   if (position > 350) setScrollTop(position);
+  // };
   const Items = ({ text, href }) => (
     <a
       onClick={() => {
