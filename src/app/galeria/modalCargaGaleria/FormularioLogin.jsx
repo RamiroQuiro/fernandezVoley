@@ -5,7 +5,6 @@ import {
   sigInGoogle,
 } from "@/app/api/services/useFirebase/autenticacion";
 import { useState } from "react";
-import ContenedorForm from "./ContenedorForm";
 
 export default function FormularioLogin({ handleClick, setActive }) {
  
@@ -17,7 +16,7 @@ export default function FormularioLogin({ handleClick, setActive }) {
   };
   const handleLogin = (e) => {
     e.preventDefault();
-    loginUser(userData.email, userData.password, setGaleraActiva);
+    loginUser(userData.email, userData.password, setGaleraActiva)
   };
   const handleSignInGoogle = async(e) => {
     e.preventDefault();
@@ -60,7 +59,7 @@ setActive(true)    });
           >
             Login
           </button>
-          <button
+          {/* <button
             onClick={handleSignInGoogle}
             className="flex w-full py-2 border rounded-xl items-center justify-around bg-gray-50"
           >
@@ -96,7 +95,7 @@ setActive(true)    });
                 ></path>
               </g>
             </svg>
-          </button>
+          </button> */}
         </div>
       </form>
     );

@@ -25,6 +25,7 @@ const loginUser = async (email, password, isAction) => {
       // Signed in
       const user = userCredential.user;
       toast.success("Ingreso Exitoso");
+      window.location.reload()
       isAction(true);
       // ...
     })
@@ -35,6 +36,7 @@ const loginUser = async (email, password, isAction) => {
       const errorMessage = error.message;
       // ..
     });
+    return login
 };
 const provider = new GoogleAuthProvider();
 

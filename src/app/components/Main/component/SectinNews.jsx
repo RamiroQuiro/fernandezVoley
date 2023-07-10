@@ -55,7 +55,7 @@ export default function SectinNews() {
           )}
           {
             verMas&&
-            data.slice(7,-1).map((news,i)=>(
+            data?.reverse()?.slice(7,-1).map((news,i)=>(
                 <CardNoticia
                 label="grid"
                 title={news.titulo}
