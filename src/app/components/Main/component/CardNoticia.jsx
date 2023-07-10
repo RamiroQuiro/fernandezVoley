@@ -65,16 +65,17 @@ export default function CardNoticia({
     return (
       <section className="text-gray-600 min-h-screen flex py-16 flex-col bg-gray-50 w-full items-center justify-center">
       
-        <div className="lg:w-4/5  px-5 py-24 mx-auto flex flex-col md:flex-row items-center justify-between">
-          <div className="md:w-1/2 w-full relative">
-            <Image
-              src={image}
-              alt={title}
-              className="h-auto w-full object-cover"
-              quality={100}
-              fill
-            />
-          </div>
+        <div className="lg:w-4/5  px-5 h-full py-24 mx-auto flex flex-col md:flex-row items-center justify-between">
+        <div className="md:w-1/2 h-full w-full relative overflow-hidden">
+  <Image
+    src={image}
+    alt={title}
+    quality={100}
+    width={100}
+    height={100}
+    className="object-cover w-full h-full"
+  />
+</div>
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">
               {date}
