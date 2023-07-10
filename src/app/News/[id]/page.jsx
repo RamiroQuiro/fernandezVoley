@@ -9,7 +9,6 @@ export default function News({params}) {
     const {data,error,isLoading,isFetching} = useQuery([id], fetchGoogleNews);
  
   const news=data?.data?.filter(e=>e.id==id)
-console.log(news)
 if(isLoading && !news)return(
 
   <Skeletor/>

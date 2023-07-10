@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import Image from "next/image";
 import ButtonVolver from "./buttonVolver";
@@ -10,8 +9,6 @@ export default function CardNoticia({
   image,
   id,
 }) {
-
-
   if (label == "titulo")
     return (
       <Link
@@ -63,20 +60,18 @@ export default function CardNoticia({
     );
   if (label == "news")
     return (
-      <section className="text-gray-600 min-h-screen flex py-16 flex-col bg-gray-50 w-full items-center justify-center">
-      
-        <div className="lg:w-4/5  px-5 h-full py-24 mx-auto flex flex-col md:flex-row items-center justify-between">
-        <div className="md:w-1/2 h-full w-full relative overflow-hidden">
-  <Image
-    src={image}
-    alt={title}
-    quality={100}
-    width={100}
-    height={100}
-    className="object-cover w-full h-full"
-  />
-</div>
-          <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+      <section className="text-gray-600 min-h-screen flex py-16  flex-col relative bg-gray-50 w-full items-center justify-center ">
+        <div className="container w-full px-5 h-full gap-4 relative py-24 mx-auto flex flex-col md:flex-row items-stretch justify-between">
+          <div className="md:w-1/2 w-full lg:py-6 mt-6 relative lg:mt-0">
+          <Image
+            src={image}
+            alt={title}
+            className="object-cover overflow-hidden rounded-lg"
+            quality={100}
+            fill
+          />
+         </div>
+          <div className=" w-full  lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">
               {date}
             </h2>
@@ -90,8 +85,9 @@ export default function CardNoticia({
               <span className="title-font font-medium text-2xl mr-5 text-gray-900"></span>
             </div>
           </div>
+          
         </div>
-        <ButtonVolver/>
+        <ButtonVolver />
       </section>
     );
 
