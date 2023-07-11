@@ -1,23 +1,23 @@
 "use client";
 import CardNoticia from "./CardNoticia";
 import { useQuery } from "@tanstack/react-query";
-import { fetchGoogleNews } from "@/app/api/services/fetchGoogleSheet";
 import Skeletor from "../../Skeletor";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { leerGaleria } from "@/app/api/services/useFirebase/cargarImagnes";
 
 export default function SectinNews() {
   const [verMas, setverMas] = useState(false)
+  const [arrayNews, setArrayNews] = useState([]);
   const {
-    data: { data },
+   data,
     error,
     isLoading,isFetching
-  } = useQuery(["NewsQuery"], fetchGoogleNews, {
-    initialData: {
-      data: [],
-    },
-    refetchInterval: 15000,
-  });
+  } = useQuery(["noticias"], leerGaleria);
 
+  useEffect(() => {
+    if (!data) return;
+    setArrayNews(data?.noticias);
+  }, [arrayNews, data]);
 
   return (
     <section id="noticias" className="bg-gradient-to-t from-gray-100/80 via-gray-100/60 to-transparent backdrop-blur-sm text-gray-100  mx-auto  py-24">
@@ -26,21 +26,27 @@ export default function SectinNews() {
       </h2>
       <div className="container w-full p-6 mx-auto space-y-6 sm:space-y-12">
         {/* Última noticia */}
-        <CardNoticia
+      {!arrayNews ? (
+           < CardNoticia
+         
+          >
+            
+          </CardNoticia>
+          ) : (  <CardNoticia
           label="titulo"
-          id={data[data.length-1]?.id}
-          title={data[data.length-1]?.titulo}
-          date={data[data.length-1]?.fecha}
-          image={data[data.length-1]?.imagen}
+          id={arrayNews[arrayNews?.length-1]?.id}
+          title={arrayNews[arrayNews?.length-1]?.titulo}
+          date={arrayNews[arrayNews?.length-1]?.fecha}
+          image={arrayNews[arrayNews?.length-1]?.url}
         >
           
-          {data[data.length-1]?.noticia}
-        </CardNoticia>
+          {arrayNews[arrayNews.length-1]?.textNoticia}
+        </CardNoticia>)}
         <div className="flex  flex-wrap duration-200  gap-8 container">
-          {!data ? (
+          {!arrayNews ? (
             <Skeletor/>
           ) : (
-            data.slice(1, 7).map((news, i) => (
+            arrayNews.slice(1, 7).map((news, i) => (
               <CardNoticia
                 label="grid"
                 title={news.titulo}
@@ -55,16 +61,16 @@ export default function SectinNews() {
           )}
           {
             verMas&&
-            data?.reverse()?.slice(7,-1).map((news,i)=>(
+            arrayNews?.reverse()?.slice(7,-1).map((news,i)=>(
                 <CardNoticia
                 label="grid"
                 title={news.titulo}
                 date={news.fecha}
-                image={news.imagen}
+                image={news.url}
                 key={news.id}
                 id={news.id}
               >
-                {news.noticia}
+                {news.textNoticia}
 
                 </CardNoticia>
             ))

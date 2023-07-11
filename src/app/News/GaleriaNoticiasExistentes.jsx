@@ -22,7 +22,8 @@ export default function GaleriaNoticiasExistentes({selectID,setPantalla}) {
   
   const editNews=(id)=>{
   let newSelect =arrayImagenes.findIndex((img) => img.id== id)
-  selectID(arrayImagenes[newSelect])
+  
+  selectID({arrayImagenes,idSelect:newSelect})
   setPantalla("cargarNews")
 
 }

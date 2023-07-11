@@ -1,29 +1,45 @@
 import React, { useEffect, useState } from "react";
-import { actualizarNoticias } from "../api/services/useFirebase/cargarImagnes";
+import {
+  actualizarNoticias,
+  cargarNoticia,
+} from "../api/services/useFirebase/cargarImagnes";
 import useFile from "../hook/useImage";
 import Image from "next/image";
-export default function FormularioCargaNoticia({idSelect}) {
-const [form, setForm] = useState({});
-
+export default function FormularioCargaNoticia({ idSelect }) {
+  const [form, setForm] = useState({});
+  const [editarNews, setEditarNews] = useState(false);
 
   const handleForm = (e) => {
     setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
-  const { handleImage, cargarImagen, previewURL, fileName, file } = useFile();
-
+  const {
+    handleImage,
+    cargarImagen,
+    previewURL,
+    fileName,
+    file,
+    setPreviewURL,
+  } = useFile();
 
   useEffect(() => {
     if (!idSelect) {
-      setForm({})
+      setForm({});
     }
-    setForm(idSelect)
-  }, [idSelect])
-  
+    setEditarNews(true);
+    setForm(idSelect?.arrayImagenes[idSelect.idSelect]);
+    setPreviewURL(idSelect?.arrayImagenes[idSelect.idSelect]?.url);
+  }, [idSelect]);
+
   const clickGuardar = async (e) => {
     e.preventDefault();
-    await actualizarNoticias({ ...form, imgName: fileName }, file).then(() => {
+    if (editarNews) {
+      idSelect.arrayImagenes[idSelect.idSelect] = form;
+      await actualizarNoticias(idSelect.arrayImagenes);
+      setEditarNews(!editarNews)
+    }
+    if(!editarNews){await cargarNoticia({ ...form, imgName: fileName }, file).then(() => {
       cargarImagen();
-    })
+    });}
     setForm({});
   };
 

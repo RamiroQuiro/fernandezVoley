@@ -28,5 +28,5 @@ export default function useFile() {
     setFileName(null)
   }
 
-  return { handleImage, cargarImagen, previewURL, fileName,file };
+  return { handleImage, cargarImagen, previewURL, fileName,file,setPreviewURL };
 }
