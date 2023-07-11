@@ -40,7 +40,7 @@ export default function SectinNews() {
           image={arrayNews[0]?.url}
         >
           
-          {arrayNews[arrayNews.length-1]?.textNoticia}
+          {arrayNews[0]?.textNoticia}
         </CardNoticia>)}
         <div className="flex  flex-wrap duration-200  gap-8 container">
           {!arrayNews ? (
@@ -55,7 +55,7 @@ export default function SectinNews() {
                 id={news.id}
                 key={i}
               >
-                {news.noticia}
+                {news.textNoticia}
               </CardNoticia>
             ))
           )}

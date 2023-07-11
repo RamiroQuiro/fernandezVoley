@@ -32,7 +32,7 @@ export default function GaleriaNoticiasExistentes({selectID,setPantalla}) {
       {!arrayImagenes.filter((img) => img.nombre !== "perfil") ? (
         <span>No hay imagenes cargadas</span>
       ) : (
-        arrayImagenes?.map((news) => (
+        arrayImagenes?.reverse()?.map((news) => (
           <div
             key={news?.id}
             className="w-1/4 flex-grow h-[500px] p-5 bg-white border border-gray-200 rounded-lg shadow relative group"
@@ -60,7 +60,7 @@ export default function GaleriaNoticiasExistentes({selectID,setPantalla}) {
                 {news?.textNoticia}
               </p>
             </div>
-            <Link href={"//localhost:3000/News/" + news?.id} className="font-medium text-orange-400">Ver mas ►</Link>
+            <Link href={"https://fernandezvoley.vercel.app/News/" + news?.id} className="font-medium text-orange-400">Ver mas ►</Link>
           </div>
         ))
       )}

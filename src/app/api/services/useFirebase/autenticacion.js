@@ -9,8 +9,9 @@ import { auth } from "../../firebase";
 import { toast } from "react-hot-toast";
 
 const userAutenticado = () => {
-  onAuthStateChanged(auth, (user) => {
+  return onAuthStateChanged(auth, (user) => {
     //se eu realmente autenticar, retorna true e nao false
+    console.log(user.uid)
     if (user) {
       return user.uid;
     } else {

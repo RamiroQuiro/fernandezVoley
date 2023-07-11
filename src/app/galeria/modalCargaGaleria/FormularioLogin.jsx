@@ -4,10 +4,11 @@ import {
   userAutenticado,
   sigInGoogle,
 } from "@/app/api/services/useFirebase/autenticacion";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function FormularioLogin({ handleClick, setActive }) {
- 
+const router=useRouter() 
   const [galeraActiva, setGaleraActiva] = useState(false);
   const [userData, setUserData] = useState({});
 
@@ -32,30 +33,30 @@ setActive(true)    });
           <i className="absolute border-2 mx-auto inset-0 md:w-8/12 h-full group-hover:border-2 group-hover:drop-shadow-online rounded-online3 group-hover:border-orange-500/80 duration-500 delay-75  group-hover:animate-[rotacion_40s_infinite]"></i>
         </div>
         <div className="absolute flex justify-center items-center flex-col gap-5">
-          <h2 className="block text-lg font-medium">Accede para poder Subir</h2>{" "}
-          <label htmlFor="email">
+          <h2 className="block text-lg font-medium">Accede para poder Subir Contenido</h2>{" "}
+          <label htmlFor="email w-full ">
             <input
               onChange={handleChange}
               type="email"
               name="email"
               id="email "
               placeholder="correo@mail.com"
-              className="py-2 px-5 rounded-xl bg-transparent border-2 border-gray-400 outline-none placeholder:text-gray-400"
+              className="py-2 px-5 rounded-xl w-full bg-transparent border-2 border-gray-400 outline-none placeholder:text-gray-400"
             />
           </label>
-          <label htmlFor="password">
+          <label htmlFor="password w-full ">
             <input
               onChange={handleChange}
               type="password"
               name="password"
               id="password "
               placeholder="contraseña"
-              className="py-2 px-5 rounded-xl bg-transparent border-2 border-gray-400 outline-none placeholder:text-gray-400"
+              className="py-2 px-5 rounded-xl w-full  bg-transparent border-2 border-gray-400 outline-none placeholder:text-gray-400"
             />
           </label>
           <button
             onClick={handleLogin}
-            className="border-orange-500  bg-transparent border-2 rounded-xl w-full py-2 px-5 font-medium text-orange-500 hover:text-gray-100 hover:bg-gradient-to-tr  hover:from-orange-500 hover:to-blue-300 duration-200"
+            className="border-orange-500   bg-transparent border-2 rounded-xl w-full py-2 px-5 font-medium text-orange-500 hover:text-gray-100 hover:bg-gradient-to-tr  hover:from-orange-500 hover:to-blue-300 duration-200"
           >
             Login
           </button>
