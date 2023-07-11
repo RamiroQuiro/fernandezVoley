@@ -16,10 +16,8 @@ export default function PrivateRoute() {
           return false;
         }
       });
-  const [active, setActive] = useState(false);
   
 
-  console.log(user)
   return (
     <>
       {!user ? (

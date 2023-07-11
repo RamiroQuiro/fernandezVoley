@@ -3,6 +3,8 @@ import { useState } from "react";
 import BotonesTabsSecciones from "./BotonesTabsSecciones";
 import RenderPantallas from "./RenderPantallas";
 import { Toaster } from "react-hot-toast";
+import { signOut } from "firebase/auth";
+import { auth } from "../api/firebase";
 
 export default function CargarNoticias() {
   const [pantalla, setPantalla] = useState("cargarNews");
@@ -57,6 +59,7 @@ export default function CargarNoticias() {
     <section className="text-gray-600 min-h-screen flex py-16  flex-col relative bg-gray-50 w-full items-center justify-center ">
       <Toaster/>
       <div className="flex-auto  bg-orange-200/40 backdrop-blur-sm border w-10/12 rounded-lg shadow-2xl  pt-0 p-5">
+      
         <div className="py-10 flex flex-col item-center justify-between">
           <div className="w-full px-5">
             <ul className="flex border-b border-gray-100">
@@ -78,8 +81,14 @@ export default function CargarNoticias() {
           pantalla={pantalla}
           setPantalla={setPantalla}
           />
-        </div>
+        </div>  <button
+        className=" rounded my-3 font-medium text-sm text-gray-700 "
+        onClick={()=>signOut(auth)}
+      >
+        Salir de sesion
+      </button>
       </div>
+    
     </section>
   );
 }
