@@ -46,7 +46,7 @@ const cargarNoticia = async (obj, img) => {
         noticias: arrayUnion({ ...obj, url: url }),
       }).then(() => {
         toast.success("Noticia Cargada");
-      });
+      }).catch((err)=>toast.error('no se pudo cargar'))
     });
   });
 };

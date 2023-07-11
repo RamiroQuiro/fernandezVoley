@@ -6,7 +6,7 @@ import {
 import useFile from "../hook/useImage";
 import Image from "next/image";
 export default function FormularioCargaNoticia({ idSelect }) {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState(null);
   const [editarNews, setEditarNews] = useState(false);
 
   const handleForm = (e) => {
@@ -25,16 +25,20 @@ export default function FormularioCargaNoticia({ idSelect }) {
     if (!idSelect?.idSelect) {
       setForm({});
     }
-    setEditarNews(true);
-    setForm(idSelect?.arrayImagenes[idSelect.idSelect]);
-    setPreviewURL(idSelect?.arrayImagenes[idSelect.idSelect]?.url);
+    if (idSelect?.idSelect) {
+      setEditarNews(true);
+      setForm(idSelect?.arrayImagenes[idSelect.idSelect]);
+      setPreviewURL(idSelect?.arrayImagenes[idSelect.idSelect]?.url);
+    }
+    console.log(editarNews)
+
   }, [idSelect]);
 
   const clickGuardar = async (e) => {
     e.preventDefault();
     if (editarNews) {
-      idSelect.arrayImagenes[idSelect.idSelect] = form;
-      await actualizarNoticias(idSelect.arrayImagenes);
+      (idSelect?.arrayImagenes)[idSelect?.idSelect] = form;
+      await actualizarNoticias(idSelect?.arrayImagenes);
       setEditarNews(!editarNews);
     }
     if (!editarNews) {
