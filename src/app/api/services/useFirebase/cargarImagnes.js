@@ -1,7 +1,8 @@
-import  { getDoc,  doc, setDoc, updateDoc, arrayUnion }from "firebase/firestore"
+import  { getDoc,  doc, setDoc, updateDoc, arrayUnion, collectionGroup, onSnapshot }from "firebase/firestore"
 import { db, storage } from "../../firebase";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { deleteObject, getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
+import { toast } from "react-hot-toast";
 
  const docRef=doc(db,'FVoley/LfRR14tVEccsxIL6jIDU')
 
@@ -21,7 +22,6 @@ const cargarImagenes=async (img,descripcion,isFunction)=>{
 const leerGaleria=async()=>{
     const data =await getDoc(docRef)
    return data.data()  //Obtener todo el contenido del documento.
-
 }
 
 
@@ -34,10 +34,25 @@ const actualizarNoticias=async(obj,img)=>{
        await getDownloadURL(fileRef).then(async(url)=>{
            await updateDoc(docRef,{
                noticias:arrayUnion({...obj,url:url})
+           }).then(()=>{
+            toast.success('Noticia Cargada')
            })
        })
     })
 }
 
 
-export { cargarImagenes,leerGaleria ,actualizarNoticias}
+
+const removeImage=async(uid,fileName,newData)=>{
+    const fileRef=ref(storage,`Fotos/${fileName}`) 
+    deleteObject(fileRef).then(()=>{
+      updateDoc(docRef,{
+        noticias:newData})
+      toast.success('Eliminado',{
+duration:"350"
+      })
+    }).catch((err)=>console.log(err))
+  }
+
+
+export { cargarImagenes,leerGaleria ,actualizarNoticias,removeImage}

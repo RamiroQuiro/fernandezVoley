@@ -1,6 +1,7 @@
 import React from 'react'
 import FormularioCargaImagen from './FormularioCargaImagen';
 import FormularioCargaNoticia from './FormularioCargaNoticia';
+import GaleriaNoticiasExistentes from './GaleriaNoticiasExistentes';
 
 export default function RenderPantallas({pantalla}) {
   
@@ -8,7 +9,7 @@ export default function RenderPantallas({pantalla}) {
 
     switch (pantalla) {
         case "noticias":
-            return <FormularioCargaImagen/>
+            return <GaleriaNoticiasExistentes/>
             break;
         case "cargarNews":
             return <FormularioCargaNoticia/>

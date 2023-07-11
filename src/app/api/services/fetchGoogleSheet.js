@@ -52,11 +52,7 @@ export async function fetchGoogleNews(filtro) {
 export async function fetchGoogleGaleria(filtro) {
   
 const respuesta=await fetch(URLGaleria,
- {
-   next: {
-     revalidate: 10,
-   },
- }
+
 )
  .then((res) => {
      return res.text();

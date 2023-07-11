@@ -1,14 +1,17 @@
 "use client"
-import { fetchGoogleNews } from '@/app/api/services/fetchGoogleSheet';
+import { fetchGoogle, fetchGoogleNews } from '@/app/api/services/fetchGoogleSheet';
+import { leerGaleria } from '@/app/api/services/useFirebase/cargarImagnes';
 import CardNoticia from '@/app/components/Main/component/CardNoticia';
 import Skeletor from '@/app/components/Skeletor';
 import { useQuery } from '@tanstack/react-query';
 
 export default function News({params}) {
     const { id } = params;
-    const {data,error,isLoading,isFetching} = useQuery([id], fetchGoogleNews);
+    const { data, error,isLoading } = useQuery(["traerNoti"], leerGaleria);
  
-  const news=data?.data?.filter(e=>e.id==id)
+    const news=data?.noticias?.filter(e=>e.id==id)[0]
+
+    
 if(isLoading && !news)return(
 
   <Skeletor/>
@@ -16,11 +19,11 @@ if(isLoading && !news)return(
 return(  <CardNoticia  
   label='news'
   id={id} 
- title={news[0].titulo}
- date={news[0].fecha}
- image={news[0].imagen}
+ title={news?.titulo}
+ date={news?.fecha}
+ image={news?.url}
  >
-   {news[0].noticia}
+   {news?.textNoticia}
  </CardNoticia>
 )
 }

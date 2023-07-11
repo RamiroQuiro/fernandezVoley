@@ -1,12 +1,11 @@
 "use client";
 import { useState } from "react";
 import BotonesTabsSecciones from "./BotonesTabsSecciones";
-import FormularioCargaNoticia from "./FormularioCargaNoticia";
-import FormularioCargaImagen from "./FormularioCargaImagen";
 import RenderPantallas from "./RenderPantallas";
+import { Toaster } from "react-hot-toast";
 
 export default function CargarNoticias() {
-  const [pantalla, setPantalla] = useState("cargaNoticia");
+  const [pantalla, setPantalla] = useState("cargarNews");
   const botones = [
     {
       id: 1,
@@ -53,10 +52,10 @@ export default function CargarNoticias() {
   const onChangeButton=(e,id)=>{
     e.preventDefault()
         setPantalla(id)
-     console.log(id)
   }
   return (
     <section className="text-gray-600 min-h-screen flex py-16  flex-col relative bg-gray-50 w-full items-center justify-center ">
+      <Toaster/>
       <div className="flex-auto  bg-orange-200/40 backdrop-blur-sm border w-10/12 rounded-lg shadow-2xl  pt-0 p-5">
         <div className="py-10 flex flex-col item-center justify-between">
           <div className="w-full px-5">
