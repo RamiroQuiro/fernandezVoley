@@ -22,7 +22,7 @@ export default function FormularioCargaNoticia({ idSelect }) {
   } = useFile();
 
   useEffect(() => {
-    if (!idSelect) {
+    if (!idSelect?.idSelect) {
       setForm({});
     }
     setEditarNews(true);
@@ -35,11 +35,13 @@ export default function FormularioCargaNoticia({ idSelect }) {
     if (editarNews) {
       idSelect.arrayImagenes[idSelect.idSelect] = form;
       await actualizarNoticias(idSelect.arrayImagenes);
-      setEditarNews(!editarNews)
+      setEditarNews(!editarNews);
     }
-    if(!editarNews){await cargarNoticia({ ...form, imgName: fileName }, file).then(() => {
-      cargarImagen();
-    });}
+    if (!editarNews) {
+      await cargarNoticia({ ...form, imgName: fileName }, file).then(() => {
+        cargarImagen();
+      });
+    }
     setForm({});
   };
 

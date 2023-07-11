@@ -23,7 +23,7 @@ export default function CargarNoticias() {
     {
       id: 2,
       link: "noticias",
-      children: "Imagen Noticia",
+      children: "Noticias Cargadas",
       path: (
         <path
           strokeLinecap="round"
