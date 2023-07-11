@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { actualizarNoticias } from "../api/services/useFirebase/cargarImagnes";
 import useFile from "../hook/useImage";
 import Image from "next/image";
-export default function FormularioCargaNoticia() {
-  const [form, setForm] = useState({});
+export default function FormularioCargaNoticia({idSelect}) {
+const [form, setForm] = useState({});
+
+
   const handleForm = (e) => {
     setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
   const { handleImage, cargarImagen, previewURL, fileName, file } = useFile();
+
+
+  useEffect(() => {
+    if (!idSelect) {
+      setForm({})
+    }
+    setForm(idSelect)
+  }, [idSelect])
+  
   const clickGuardar = async (e) => {
     e.preventDefault();
     await actualizarNoticias({ ...form, imgName: fileName }, file).then(() => {

@@ -76,6 +76,7 @@ export default function CargarNoticias() {
           </div>
           <RenderPantallas
           pantalla={pantalla}
+          setPantalla={setPantalla}
           />
         </div>
       </div>

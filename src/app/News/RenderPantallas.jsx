@@ -1,18 +1,20 @@
-import React from 'react'
-import FormularioCargaImagen from './FormularioCargaImagen';
+"use client"
+import { useState } from 'react';
 import FormularioCargaNoticia from './FormularioCargaNoticia';
 import GaleriaNoticiasExistentes from './GaleriaNoticiasExistentes';
 
-export default function RenderPantallas({pantalla}) {
-  
-    
+export default function RenderPantallas({pantalla,setPantalla}) {
+const [idSelect, setIdSelect] = useState(null)  
+    const editarNews=(id)=>{
+        setIdSelect(id)
+    }
 
     switch (pantalla) {
         case "noticias":
-            return <GaleriaNoticiasExistentes/>
+            return <GaleriaNoticiasExistentes selectID={editarNews} setPantalla={setPantalla}/>
             break;
         case "cargarNews":
-            return <FormularioCargaNoticia/>
+            return <FormularioCargaNoticia idSelect={idSelect}/>
         default:
             break;
     }

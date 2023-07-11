@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { leerGaleria, removeImage } from "../api/services/useFirebase/cargarImagnes";
 import Link from "next/link";
 
-export default function GaleriaNoticiasExistentes() {
-  const { data, error } = useQuery(["GaleriaOmpleta"], leerGaleria);
+export default function GaleriaNoticiasExistentes({selectID,setPantalla}) {
+  const { data, error } = useQuery(["GaleriaNoticia"], leerGaleria);
   const [arrayImagenes, setArrayImagenes] = useState([]);
 
   useEffect(() => {
@@ -16,11 +16,16 @@ export default function GaleriaNoticiasExistentes() {
 
   const removeImageFirestore = (id,imgName) => {
     let newArray = (arrayImagenes).filter((img) => img.id != id)
-
+    
     removeImage(id,imgName,newArray);
   };
+  
+  const editNews=(id)=>{
+  let newSelect =arrayImagenes.findIndex((img) => img.id== id)
+  selectID(arrayImagenes[newSelect])
+  setPantalla("cargarNews")
 
-
+}
   return (
     <div className="flex flex-wrap w-full  items-center   justify-evenly mx-auto gap-4 mt-10">
 
@@ -34,7 +39,7 @@ export default function GaleriaNoticiasExistentes() {
           >
             <div className="bg-gray-200 gap-x-2 px-2 py-1  z-30 rounded-lg absolute hidden group-hover:flex items-center justify-between right-2 top-1 animate-[aparecer_.2s]">
               <button onClick={() => removeImageFirestore(news?.id,news?.imgName)} className="hover:bg-white p-1 text-xs rounded-full">❌</button>
-              <button onClick={() => removeImageFirestore(news?.id,news?.imgName)}  className="hover:bg-white p-1 text-xs rounded-full">✏️</button>
+              <button onClick={() => editNews(news?.id)}  className="hover:bg-white p-1 text-xs rounded-full">✏️</button>
             </div>
             <div className="relative w-full h-1/2">
               <Image
