@@ -30,7 +30,7 @@ export default function FormularioCargaNoticia({ idSelect }) {
       setForm(idSelect?.arrayImagenes[idSelect.idSelect]);
       setPreviewURL(idSelect?.arrayImagenes[idSelect.idSelect]?.url);
     }
-    console.log(idSelect);
+    
   }, [idSelect]);
 
   const clickGuardar = async (e) => {

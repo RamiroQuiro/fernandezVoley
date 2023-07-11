@@ -16,7 +16,7 @@ export default function SectinNews() {
 
   useEffect(() => {
     if (!data) return;
-    setArrayNews(data?.noticias);
+    setArrayNews((data?.noticias).reverse());
   }, [arrayNews, data]);
 
   return (
@@ -34,10 +34,10 @@ export default function SectinNews() {
           </CardNoticia>
           ) : (  <CardNoticia
           label="titulo"
-          id={arrayNews[arrayNews?.length-1]?.id}
-          title={arrayNews[arrayNews?.length-1]?.titulo}
-          date={arrayNews[arrayNews?.length-1]?.fecha}
-          image={arrayNews[arrayNews?.length-1]?.url}
+          id={arrayNews[0]?.id}
+          title={arrayNews[0]?.titulo}
+          date={arrayNews[0]?.fecha}
+          image={arrayNews[0]?.url}
         >
           
           {arrayNews[arrayNews.length-1]?.textNoticia}
