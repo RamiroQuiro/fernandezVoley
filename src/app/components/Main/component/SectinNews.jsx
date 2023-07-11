@@ -51,7 +51,7 @@ export default function SectinNews() {
                 label="grid"
                 title={news.titulo}
                 date={news.fecha}
-                image={news.imagen}
+                image={news.url}
                 id={news.id}
                 key={i}
               >

@@ -22,16 +22,15 @@ export default function FormularioCargaNoticia({ idSelect }) {
   } = useFile();
 
   useEffect(() => {
-    if (!idSelect?.idSelect) {
+    if (!idSelect) {
       setForm({});
     }
-    if (idSelect?.idSelect) {
+    if (idSelect) {
       setEditarNews(true);
       setForm(idSelect?.arrayImagenes[idSelect.idSelect]);
       setPreviewURL(idSelect?.arrayImagenes[idSelect.idSelect]?.url);
     }
-    console.log(editarNews)
-
+    console.log(idSelect);
   }, [idSelect]);
 
   const clickGuardar = async (e) => {
