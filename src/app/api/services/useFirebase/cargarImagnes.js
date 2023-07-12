@@ -31,8 +31,12 @@ const cargarImagenes = async (img, descripcion, isFunction) => {
   });
 };
 const leerGaleria = async () => {
-  const data = await getDoc(docRef);
-  return data.data(); //Obtener todo el contenido del documento.
+  const data=await getDoc(docRef).then((data)=>{
+    const imagenes= (data.data())?.imagenes?.reverse()
+    const noticias= (data?.data())?.noticias?.reverse()
+    return { imagenes, noticias}
+  })
+  return data
 };
 
 const cargarNoticia = async (obj, img) => {

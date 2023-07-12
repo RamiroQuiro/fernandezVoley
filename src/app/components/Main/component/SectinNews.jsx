@@ -16,7 +16,7 @@ export default function SectinNews() {
 
   useEffect(() => {
     if (!data) return;
-    setArrayNews((data?.noticias).reverse());
+    setArrayNews(data.noticias);
   }, [arrayNews, data]);
 
   return (
