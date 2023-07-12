@@ -19,7 +19,7 @@ export default function CardNoticia({
           <Image
             src={image}
             alt={title}
-            className="object-cover"
+            className="object-contain"
             quality={50}
             fill
           />
@@ -44,7 +44,7 @@ export default function CardNoticia({
           <Image
             src={image}
             alt={title}
-            className="object-cover"
+            className="object-contain"
             quality={50}
             fill
           />
@@ -66,7 +66,7 @@ export default function CardNoticia({
           <Image
             src={image}
             alt={title}
-            className="object-cover overflow-hidden object-center rounded-lg"
+            className="object-contain overflow-hidden object-center rounded-lg"
             quality={100}
             fill
           />
