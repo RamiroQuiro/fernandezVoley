@@ -33,7 +33,9 @@ const cargarImagenes = async (img, descripcion, isFunction) => {
 const leerGaleria = async () => {
   const data=await getDoc(docRef).then((data)=>{
     const imagenes= (data.data())?.imagenes
-    const noticias= (data?.data())?.noticias
+    
+    const noticias= ((data?.data())?.noticias)?.sort((a,b)=>b.dateCarga-a.dateCarga)
+
     return { imagenes, noticias}
   })
   return data
@@ -42,7 +44,7 @@ const leerGaleria = async () => {
 const cargarNoticia = async (obj, img) => {
   const uuidv = uuidv4().slice(0, 4);
   const fileRef = ref(storage, `Fotos/${obj.imgName}`);
-  obj = { ...obj, ...{ id: uuidv } };
+  obj = { ...obj, ...{ id: uuidv ,dateCarga:new Date()} };
 
   await uploadBytes(fileRef, img).then(async () => {
     await getDownloadURL(fileRef).then(async (url) => {

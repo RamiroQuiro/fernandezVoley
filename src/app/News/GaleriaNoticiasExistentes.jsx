@@ -32,7 +32,7 @@ export default function GaleriaNoticiasExistentes({selectID,setPantalla}) {
       {!arrayImagenes.filter((img) => img.nombre !== "perfil") ? (
         <span>No hay imagenes cargadas</span>
       ) : (
-        arrayImagenes?.reverse()?.map((news) => (
+        arrayImagenes?.map((news) => (
           <div
             key={news?.id}
             className="w-1/4 flex-grow h-[500px] p-5 bg-white border border-gray-200 rounded-lg shadow relative group"

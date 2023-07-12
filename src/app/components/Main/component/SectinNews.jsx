@@ -20,8 +20,6 @@ export default function SectinNews() {
     traerData();
 
   }, []);
-  console.log(data);
-
   return (
     <section
       id="noticias"
@@ -63,7 +61,7 @@ export default function SectinNews() {
             ))
           )}
           {verMas &&
-            arrayNews?.slice(7, -1).map((news, i) => (
+            arrayNews?.slice(6, ).map((news, i) => (
               <CardNoticia
                 label="grid"
                 title={news.titulo}
@@ -82,7 +80,7 @@ export default function SectinNews() {
             type="button"
             className="px-6 py-3 text-sm rounded-md hover:underline bg-gray-900 text-gray-400"
           >
-            Ver Más...
+           {!verMas? "Ver Más...":"Ver Menos"}
           </button>
         </div>
       </div>

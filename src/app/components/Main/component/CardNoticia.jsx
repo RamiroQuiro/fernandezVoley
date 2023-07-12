@@ -29,7 +29,7 @@ export default function CardNoticia({
             {title}
           </h3>
           <span className="text-xs text-gray-400">{date}</span>
-          <p className="truncate ...">{children}</p>
+          <p className="llipsis line-clamp-5 ...">{children}</p>
         </div>
       </Link>
     );
@@ -54,7 +54,7 @@ export default function CardNoticia({
             {title}
           </h3>
           <span className="text-xs text-gray-400">{date}</span>
-          <p className="truncate ...">{children}</p>
+          <p className="llipsis line-clamp-3 ...">{children}</p>
         </div>
       </Link>
     );
