@@ -15,7 +15,7 @@ export default function CardNoticia({
         href={"https://fernandezvoley.vercel.app/News/" + id}
         className=" w-full gap-3 mx-auto  group hover:no-underline focus:no-underline  grid grid-cols-1 lg:grid-cols-12 bg-gray-100 text-gray-700 p-3"
       >
-        <div className="object-cover w-full h-64 relative rounded sm:h-96 lg:col-span-7 bg-gray-500">
+        <div className="object-cover w-full h-64 relative rounded sm:h-96 lg:col-span-7">
           <Image
             src={image}
             alt={title}
@@ -40,7 +40,7 @@ export default function CardNoticia({
         href={"https://fernandezvoley.vercel.app/News/" + id}
         className="md:max-w-xs min-w-[30%] w-full  mx-auto group hover:no-underline focus:no-underline animate-[aparecerDeArriba_1s] rounded-lg p-5 shadow-md bg-gray-100 text-gray-700"
       >
-        <div className=" w-full rounded h-52 relative bg-gray-500">
+        <div className=" w-full rounded h-52 relative ">
           <Image
             src={image}
             alt={title}
