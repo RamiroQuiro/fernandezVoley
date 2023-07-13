@@ -61,17 +61,17 @@ export default function CardNoticia({
   if (label == "news")
     return (
       <section className="text-gray-600 min-h-screen flex py-16  flex-col relative bg-gray-50 w-full items-center justify-center ">
-        <div className="container w-full px-5 h-full gap-4 relative py-24 mx-auto flex flex-col md:flex-row items-stretch justify-between">
-          <div className="md:w-1/2 max-h-[500px] w-full lg:py-6 mt-6 relative lg:mt-0">
+        <div className="md:container w-full px-5  h-full gap-4 relative py-24 mx-auto flex flex-col md:flex-row md:items-stretch items-center justify-between">
+          <div className="md:w-1/2 w-full  h-1/2 max-h-[750px] min-h-[450px]  lg:py-6 mt-6 relative lg:mt-0">
           <Image
             src={image}
             alt={title}
-            className="object-contain overflow-hidden object-center rounded-lg"
+            className="object-contain md:w-full w-full h-auto overflow-hidden object-center rounded-lg"
             quality={100}
             fill
           />
          </div>
-          <div className=" w-full  lg:py-6 mt-6 lg:mt-0">
+          <div className=" w-full h-1/2 lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">
               {date}
             </h2>
