@@ -32,7 +32,7 @@ export default function BannerMain() {
             quality={75}
             priority
             key={sponsor.id}
-            className="md:h-48 h-24 aspect-video  object-cover object-center bg-gray-50 md:w-[25%] w-[45%] rounded-md p-2"
+            className="md:h-48 h-24 aspect-video  object-contain object-center bg-gray-50 md:w-[25%] w-[45%] rounded-md p-2"
             src={sponsor.src}
             alt={sponsor.alt}
           />
