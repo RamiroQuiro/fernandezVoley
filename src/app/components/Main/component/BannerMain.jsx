@@ -1,26 +1,23 @@
 import Image from "next/image";
-import Bichito from "../../../../../public/Bichito.jpg";
-import MuniFer from "../../../../../public/MuniFer.jpg";
-import MyM from "../../../../../public/MyM.jpg";
 
 export default function BannerMain() {
   const arraySponsor = [
     
     {
-      src: MuniFer,
+      src: '/MuniFer.jpg',
       alt: "MuniFer",
       id: 4,
     },
     {
-      src: Bichito,
-      alt: "Bichito",
+      src: '/publicite.jpg',
+      alt: "Publicite",
       id: 5,
     },
-    {
-      src: MyM,
-      alt: "MyM",
-      id: 6,
-    },
+    // {
+    //   src: MyM,
+    //   alt: "MyM",
+    //   id: 6,
+    // },
   ];
 
   return (
@@ -28,7 +25,8 @@ export default function BannerMain() {
       <div className="relative w-full flex flex-wrap mx-auto items-center justify-around md:gap-4 gap-2  p-2">
         {arraySponsor.map((sponsor) => (
           <Image
-            
+            width={100}
+            height={100}
             quality={75}
             priority
             key={sponsor.id}
